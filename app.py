@@ -1,6 +1,7 @@
 # 라이브러리
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import desc
 
 # 앱 셋업
 app = Flask(__name__)
@@ -19,7 +20,7 @@ class Exercise(db.Model):
 # 시작화면 - 운동 데이터 보여주기
 @app.route('/')
 def render_index():
-    exercises = Exercise.query.all()
+    exercises = Exercise.query.order_by(desc(Exercise.date)).all()  # date 열을 기준으로 내림차순 정렬합니다.
     return render_template('index.html', exercises=exercises)
 
 # 운동 데이터 삽입
