@@ -16,3 +16,39 @@ th {
     background-color: #4CAF50;
     color: white;
 }
+
+.table-container {
+    width: 80%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    border: 8px solid #45a049;
+    border-radius: 10px;
+    padding: 16px;
+    box-sizing: border-box ;
+}
+
+.form-container input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.form-container input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form-container input[type=submit]:hover {
+    background-color: #45a049;
+}
