@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="form-container">
-        <form id="exercise-form">
+        <form id="exercise-form" method="post" action="/add_exercise">
             <label for="date">날짜:</label>
             <input type="text" id="date" name="date" required>
             
@@ -28,7 +28,7 @@
             <input type="submit" value="추가">
         </form>
     </div>
-    
+
     <div class="table-container">
         <table>
             <tr class="table-head">
@@ -38,13 +38,15 @@
                 <th>소모 칼로리</th>
                 <th>최대 bpm</th>
             </tr>
+            {% for exercise in exercises %}
             <tr class="table-data">
-                <td>2023-07-12</td>
-                <td>John Doe</td>
-                <td>런닝</td>
-                <td>350</td>
-                <td>180</td>
+                <td>{{ exercise.date }}</td>
+                <td>{{ exercise.name }}</td>
+                <td>{{ exercise.activity }}</td>
+                <td>{{ exercise.calories }}</td>
+                <td>{{ exercise.bpm }}</td>
             </tr>
+            {% endfor %}
         </table>
     </div>
 </body>
